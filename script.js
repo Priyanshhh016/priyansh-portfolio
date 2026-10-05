@@ -461,8 +461,8 @@
     },
     sealed: {
       badge: "CURRENTLY IN PROGRESS · STRICTLY CONFIDENTIAL // SEALED",
-      title: "Confidential Robotics Initiative",
-      overview: "A proprietary robotics and physical computing initiative currently in active development by Priyansh Sharma. Under strict non-disclosure and intellectual property safeguards, all technical specifications, component selections, and operational telemetry remain completely sealed.",
+      title: "Portable Border Surveillance Mesh",
+      overview: "The Portable Border Surveillance Mesh (PBSM) is a distributed remote monitoring and sensing system currently in active development by Priyansh Sharma. Under strict non-disclosure and intellectual property safeguards, all technical specifications, component selections, and operational telemetry remain completely sealed.",
       components: [
         "[SEALED // CLASSIFIED HARDWARE]",
         "[SEALED // EMBEDDED REAL-TIME CORE]",
