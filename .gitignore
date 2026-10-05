@@ -1,0 +1,8 @@
+# Test artifacts & headless browser profiles
+*.png
+__pycache__/
+.chrome_test_profile*
+test_*.py
+check_*.py
+debug_*.py
+site2/

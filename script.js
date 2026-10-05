@@ -459,31 +459,17 @@
       ],
       highlights: "Designed specifically for uneven terrain where wheeled rovers struggle. Powered by dual high-torque 37-555 geared DC motors driving steel chain tracks, governed through a dual-stage computational architecture (Raspberry Pi 3 + Arduino Mega)."
     },
-    mesh: {
-      badge: "WORKED ON THIS · BENCH PROTOTYPE",
-      title: "Portable Border Surveillance Mesh",
-      overview: "A distributed, low-power remote monitoring network architecture. Nodes are built around the dual-core ESP32-S3 microcontroller communicating via Sub-GHz LoRa radio back to a central Raspberry Pi edge gateway.",
+    sealed: {
+      badge: "CURRENTLY IN PROGRESS · STRICTLY CONFIDENTIAL // SEALED",
+      title: "Confidential Robotics Initiative",
+      overview: "A proprietary robotics and physical computing initiative currently in active development by Priyansh Sharma. Under strict non-disclosure and intellectual property safeguards, all technical specifications, component selections, and operational telemetry remain completely sealed.",
       components: [
-        "ESP32-S3 Dual-Core Xtensa Microcontrollers",
-        "Semtech SX1262 / SX1276 LoRa RF Modules",
-        "PIR & Ultrasonic Environmental Sensor Inputs",
-        "Raspberry Pi Central Edge Gateway",
-        "Low-Dropout Power Management & Solar Charging Circuit"
+        "[SEALED // CLASSIFIED HARDWARE]",
+        "[SEALED // EMBEDDED REAL-TIME CORE]",
+        "[SEALED // CONTROL & ACTUATION PIPELINE]",
+        "[SEALED // PROPRIETARY SUBSYSTEMS]"
       ],
-      highlights: "COMPLETED PROTOTYPE BENCH TESTS: Circuit schematics, power optimization, and LoRa packet framing were validated on bench. Multi-hop packet telemetry verified across experimental nodes."
-    },
-    pbsm: {
-      badge: "CURRENTLY IN PROGRESS · STRICTLY CONFIDENTIAL",
-      title: "Project PBSM",
-      overview: "Project PBSM is an advanced engineering initiative currently under active development by Priyansh Sharma. To safeguard project proprietary methods and innovation, all technical specifications, component selections, and operational telemetry remain strictly confidential.",
-      components: [
-        "Proprietary Hardware Architecture [REDACTED]",
-        "Custom Real-Time Firmware Core [REDACTED]",
-        "Autonomous Robotic Subsystem [REDACTED]",
-        "Sensor Fusion & Control Pipeline [REDACTED]",
-        "Confidential Power & Actuation Bus [REDACTED]"
-      ],
-      highlights: "CONFIDENTIALITY NOTICE: This system is in active development. No public schematics, architectural details, or demonstration media will be released prior to the final project launch and official unveiling. All details remain strictly confidential until the end."
+      highlights: "ALL INFORMATION SEALED: This system is in active stealth development. No public schematics, architectural details, or demonstration media will be released prior to the final project launch and official unveiling. All details remain strictly confidential and sealed until the end."
     }
   };
 
