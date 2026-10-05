@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Priyansh Sharma · Robotics & AI Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="textura.css?v=3">
+</head>
+<body>
+
+<!-- Textura-inspired Interactive WebGL Fluid Shader Background -->
+<canvas id="webgl-canvas"></canvas>
+
+<!-- Noise texture canvas for filmic aesthetic (ultra-lightweight patterned buffer) -->
+<canvas id="noise-canvas"></canvas>
+
+<!-- Interactive Custom Cursor (hidden on touch devices) -->
+<div id="cursor-ring" aria-hidden="true"><span id="cursor-label"></span></div>
+<div id="cursor-dot" aria-hidden="true"></div>
+
+<!-- Preloader (Textura-style counter reveal) -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <span class="pre-name">Priyansh <em>Sharma</em></span>
+    <span class="pre-count mono" id="pre-count">000</span>
+  </div>
+  <div class="pre-bar"><span id="pre-bar-fill"></span></div>
+</div>
+
+<!-- Scroll progress -->
+<div id="scroll-progress" aria-hidden="true"></div>
+
+<!-- Live HUD (site that "looks back") -->
+<div class="live-hud mono" aria-hidden="true">
+  <span>X <b id="hud-x">0000</b></span>
+  <span>Y <b id="hud-y">0000</b></span>
+  <span>SCR <b id="hud-s">000%</b></span>
+</div>
+
+<!-- NAVIGATION -->
+<nav id="nav">
+  <div class="nav-container">
+    <a href="#hero" class="nav-logo" aria-label="Home">PS<span class="nav-dot">.</span></a>
+    <div class="nav-links">
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="https://github.com/PriyanshSharma" target="_blank" rel="noopener noreferrer" class="nav-link" id="nav-github-link">GitHub ↗</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="mailto:priyansh.robotics@gmail.com" class="nav-cta" title="Email Priyansh directly">✉ Email Me</a>
+    </div>
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU MODAL -->
+<div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+  <div class="mobile-menu-links">
+    <a href="#work" class="mobile-nav-link">01 · Work</a>
+    <a href="#about" class="mobile-nav-link">02 · About</a>
+    <a href="#contact" class="mobile-nav-link">03 · Contact</a>
+    <a href="https://github.com/PriyanshSharma" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">04 · GitHub ↗</a>
+    <a href="mailto:priyansh.robotics@gmail.com" class="mobile-nav-link mobile-email-link">✉ priyansh.robotics@gmail.com</a>
+  </div>
+</div>
+
+<!-- ─── HERO SECTION ─── -->
+<section id="hero">
+  <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+  <div class="hero-center">
+    <div class="hero-eyebrow">
+      <span class="dot-pulse orange"></span>
+      <span class="mono">B.TECH · ROBOTICS & AI · MANIPAL UNIVERSITY JAIPUR</span>
+      <span class="eyebrow-tag mono">3RD YEAR</span>
+    </div>
+
+    <h1 class="hero-name" id="hero-name" aria-label="Priyansh Sharma">
+      <div class="line-mask line-mask-1">
+        <span class="line-inner line-solid" id="hero-line-1">PRIYANSH</span>
+      </div>
+      <div class="line-mask line-mask-2">
+        <span class="line-inner line-outline" id="hero-line-2">SHARMA</span>
+      </div>
+    </h1>
+
+    <p class="hero-sub">
+      Building physical systems that connect hardware with computing.<br>
+      Seeking practical internship opportunities across India to learn, contribute, and grow.
+    </p>
+
+    <div class="hero-pills">
+      <span class="pill"><span class="pill-dot"></span>Robotics</span>
+      <span class="pill"><span class="pill-dot"></span>Embedded Systems</span>
+      <span class="pill"><span class="pill-dot"></span>Connected Sensing</span>
+      <span class="pill"><span class="pill-dot"></span>Applied AI</span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">Explore Projects <span class="arrow">↓</span></a>
+      <a href="mailto:priyansh.robotics@gmail.com" class="btn-secondary hero-email-btn" title="Send email to priyansh.robotics@gmail.com">
+        <span class="mail-icon">✉</span>
+        <span>priyansh.robotics@gmail.com</span>
+        <span class="btn-icon">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+
+  <div class="hero-corner-tag">
+    <span class="mono">Academic Year · 3rd Year (2024–25)</span>
+  </div>
+</section>
+
+<!-- ─── MARQUEE ACCENT STRIP ─── -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Mimicking Robotic Hand [Worked On This]</span><span class="sep">/</span>
+    <span>Raspberry Pi Tracked Rover [Worked On This]</span><span class="sep">/</span>
+    <span>Confidential Robotics Initiative [Currently In Progress · Sealed]</span><span class="sep">/</span>
+    <span>Physical Computing</span><span class="sep">/</span>
+    <span>Manipal University Jaipur</span><span class="sep">/</span>
+    <span>Mimicking Robotic Hand [Worked On This]</span><span class="sep">/</span>
+    <span>Raspberry Pi Tracked Rover [Worked On This]</span><span class="sep">/</span>
+    <span>Confidential Robotics Initiative [Currently In Progress · Sealed]</span><span class="sep">/</span>
+    <span>Physical Computing</span><span class="sep">/</span>
+    <span>Manipal University Jaipur</span><span class="sep">/</span>
+  </div>
+</div>
+
+<!-- ─── WORK / PROJECTS ─── -->
+<section id="work">
+  <div class="section-header">
+    <span class="section-num mono">01 / SELECTED WORK</span>
+    <h2 class="split-reveal">Built with <em class="serif">Hardware.</em></h2>
+    <p class="section-desc">
+      Systems I have worked on and engineered — featuring completed physical platforms alongside active confidential R&D.
+    </p>
+  </div>
+
+  <!-- Project 1: Robotic Hand -->
+  <article class="project-block" data-index="01" id="project-hand">
+    <div class="project-number mono">01</div>
+    <div class="project-content">
+      <div class="project-meta-row">
+        <span class="project-tag verified">Worked On This</span>
+        <span class="project-year mono">Completed Build</span>
+      </div>
+      <h3 class="project-title">Mimicking<br>Robotic Hand</h3>
+      <p class="project-desc">
+        A multi-joint articulated mechanical hand capable of mirroring human hand gestures in real time. Features tendon-driven finger linkage actuated by precision servo motors, translating input motion into synchronized grip gestures.
+      </p>
+      <div class="project-tags-row">
+        <span>Worked On This</span>
+        <span>Servo Kinematics</span>
+        <span>Sensor Telemetry</span>
+        <span>Mechanical Linkage</span>
+        <span>Gesture Mapping</span>
+      </div>
+      <button class="project-action-btn" data-project="hand">
+        <span>Inspect Architecture</span>
+        <span class="btn-icon">↗</span>
+      </button>
+    </div>
+  </article>
+
+  <!-- Project 2: Raspberry Pi Rover -->
+  <article class="project-block" data-index="02" id="project-rover">
+    <div class="project-number mono">02</div>
+    <div class="project-content">
+      <div class="project-meta-row">
+        <span class="project-tag verified">Worked On This</span>
+        <span class="project-year mono">Completed Build</span>
+      </div>
+      <h3 class="project-title">Raspberry Pi<br>Tracked Rover</h3>
+      <p class="project-desc">
+        A custom continuous-track mobile robotics platform driven by high-torque DC geared motors with onboard Raspberry Pi computational core. Designed for rugged terrain navigation and wireless remote teleoperation.
+      </p>
+      <div class="project-tags-row">
+        <span>Worked On This</span>
+        <span>Raspberry Pi</span>
+        <span>Dual Track Drive</span>
+        <span>Motor Controller</span>
+        <span>Mobile Robotics</span>
+      </div>
+      <button class="project-action-btn" data-project="rover">
+        <span>Inspect Architecture</span>
+        <span class="btn-icon">↗</span>
+      </button>
+    </div>
+  </article>
+
+  <!-- Project 3: Confidential Initiative (In Progress - Sealed) -->
+  <article class="project-block wip-card pbsm-card" data-index="03" id="project-sealed">
+    <div class="project-number mono">03</div>
+    <div class="project-content">
+      <div class="project-meta-row">
+        <span class="project-tag wip-tag pbsm-tag"><span class="dot-pulse orange"></span>Currently In Progress</span>
+        <span class="project-year mono">Active · Confidential</span>
+      </div>
+      <h3 class="project-title">Confidential Robotics Initiative<br><span class="classified-label">[Sealed Project]</span></h3>
+      <p class="project-desc">
+        A proprietary robotics and physical computing initiative currently in active development. In accordance with strict non-disclosure safeguards, all technical specifications, architectures, component layouts, and implementation details are sealed until official completion.
+      </p>
+      <div class="project-tags-row">
+        <span>Currently In Progress</span>
+        <span>Strictly Confidential</span>
+        <span>Hardware & AI</span>
+        <span>Sealed Development</span>
+        <span>All Details Undisclosed</span>
+      </div>
+      <div class="status-disclaimer pbsm-disclaimer">
+        <span class="disclaimer-badge classified-badge">SEALED & CONFIDENTIAL</span>
+        <span>Work in progress. All project information, schematics, and operational capabilities are sealed until official completion.</span>
+      </div>
+      <button class="project-action-btn pbsm-btn" data-project="sealed">
+        <span>Confidentiality Notice</span>
+        <span class="btn-icon">🔒</span>
+      </button>
+    </div>
+  </article>
+</section>
+
+<!-- ─── ABOUT SECTION ─── -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-left">
+      <span class="section-num mono">02 / PROFILE</span>
+      <h2 class="about-heading split-reveal">Engineering at the <em class="serif">Edge.</em></h2>
+      <div class="about-status-card">
+        <div class="status-indicator">
+          <span class="dot-pulse orange"></span>
+          <span class="mono">Open to Opportunities</span>
+        </div>
+        <p class="status-role">Seeking Engineering Internships across India</p>
+        <p class="status-sub mono">Embedded Systems · Robotics · Connected Devices</p>
+      </div>
+    </div>
+    
+    <div class="about-right">
+      <p class="about-body lead">
+        My name is <strong>Priyansh Sharma</strong>. I am currently in my 3rd year pursuing a B.Tech in <strong>Robotics and Artificial Intelligence</strong> at Manipal University Jaipur.
+      </p>
+      <p class="about-body">
+        My academic background merges modern computing with physical mechanical systems. Rather than solely studying theoretical models, I focus on building tangible hardware: soldering circuits, programming microcontrollers, tuning motor control algorithms, and handling data acquisition from sensors.
+      </p>
+      <p class="about-body">
+        I value transparency and authentic learning. I am seeking internship roles where I can work alongside experienced engineers, contribute meaningfully to real engineering challenges, and expand my technical depth.
+      </p>
+
+      <div class="about-tags-block">
+        <div class="about-tag-group">
+          <span class="mono tag-label">Primary Interests</span>
+          <div class="tag-list">
+            <span>Physical Robotics</span>
+            <span>Microcontrollers (ESP32 / ARM)</span>
+            <span>LoRa Wireless Mesh</span>
+            <span>Single Board Computers</span>
+            <span>Actuator Controls</span>
+            <span>Embedded Sensor Fusion</span>
+          </div>
+        </div>
+
+        <div class="about-tag-group">
+          <span class="mono tag-label">Education & Institution</span>
+          <div class="education-card">
+            <div class="edu-title">B.Tech in Robotics and Artificial Intelligence</div>
+            <div class="edu-school">Manipal University Jaipur (MUJ)</div>
+            <div class="edu-meta mono">3rd Year Student · Academic Year 2024–2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT SECTION ─── -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-header">
+      <span class="section-num mono">03 / DIRECT CONTACT</span>
+      <div class="contact-large-text">
+        <span>Let's Build</span>
+        <span class="accent-text serif-accent">Together.</span>
+      </div>
+      <p class="contact-sub">
+        I am actively looking for internship positions and collaborative research initiatives. If you are developing robotics, embedded hardware, or connected systems, feel free to reach out.
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <div class="contact-btn-group">
+        <a href="mailto:priyansh.robotics@gmail.com" class="contact-btn" id="main-contact-email-btn">
+          <span class="mail-icon">✉</span>
+          <span>priyansh.robotics@gmail.com</span>
+          <span class="btn-icon">↗</span>
+        </a>
+        <button type="button" class="contact-copy-btn" id="copy-email-btn" title="Copy email address to clipboard" aria-label="Copy email">
+          <span id="copy-icon">📋</span>
+          <span id="copy-label">Copy Email</span>
+        </button>
+        <a href="https://github.com/PriyanshSharma" target="_blank" rel="noopener noreferrer" class="contact-github-btn" id="main-github-btn" title="View GitHub profile">
+          <span class="github-icon">⚡</span>
+          <span>GitHub</span>
+          <span class="btn-icon">↗</span>
+        </a>
+      </div>
+      <div class="contact-meta-links">
+        <a href="https://github.com/PriyanshSharma" target="_blank" rel="noopener noreferrer" class="mono-badge mono-link">GitHub · PriyanshSharma ↗</a>
+        <span class="mono-badge">LinkedIn · Verified profile pending</span>
+        <span class="mono-badge">Location · Jaipur / Across India</span>
+      </div>
+    </div>
+
+    <div class="contact-footer-note mono">
+      <span>* Verified contact handles, résumé PDF, and build logs will be updated directly upon verification.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <span class="mono font-bold">Priyansh Sharma</span>
+      <span class="mono text-muted">· Robotics & AI</span>
+    </div>
+    <div class="footer-email-col">
+      <a href="mailto:priyansh.robotics@gmail.com" class="footer-email mono">✉ priyansh.robotics@gmail.com</a>
+    </div>
+    <div class="footer-clock mono">
+      <span class="dot-pulse orange"></span>
+      <span>JAIPUR</span>
+      <span class="clock-val" id="live-ist-clock">00:00:00 IST</span>
+    </div>
+    <div class="footer-right mono">
+      <span>© 2025 · Manipal University Jaipur</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── PROJECT DETAIL MODAL / DRAWER ─── -->
+<div id="project-modal" class="project-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-card">
+    <button class="modal-close" id="modal-close" aria-label="Close details">✕</button>
+    <div class="modal-header">
+      <span class="modal-badge mono" id="modal-badge">BUILD BREAKDOWN</span>
+      <h3 class="modal-title" id="modal-title">Project Title</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <!-- Injected by JavaScript dynamically -->
+    </div>
+  </div>
+</div>
+
+<script src="three.min.js"></script>
+<script src="script.js?v=3"></script>
+<script src="textura.js?v=3"></script>
+</body>
+</html>
